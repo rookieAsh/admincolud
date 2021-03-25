@@ -7,7 +7,7 @@ let url3 = "https://anypayimage.oss-cn-beijing.aliyuncs.com/marioAbout.txt"
 // let url1 = "https://api-cn.etherscan.com/"
 let url4 = "http://192.168.2.183:8081/"
 
-let indexAPI = {
+let indexApi = {
     // 用户管理page
     apiUserManagePage: () => {
         return axios({
@@ -20,6 +20,27 @@ let indexAPI = {
         return axios({
             url: url4 + "admin/getById",
             method: "get"
+        })
+    },
+    // 商品管理page goods/getAll
+    apiGoodsManagePage: () => {
+        return axios({
+            url: url4 + "goods/getAll",
+            method: "get"
+        })
+    },
+    // 新增商品goods/add
+    apiAddGoods: (data) => {
+        return axios({
+            url: url4 + "goods/add",
+            method: "post"
+        })
+    },
+    // 编辑商品
+    apiUpdateGoods: (data) => {
+        return axios({
+            url: url4 + "goods/update",
+            method: "post"
         })
     },
     // getSts: (data) => {
@@ -243,4 +264,4 @@ let indexAPI = {
     // }
 }
 
-export default indexAPI
+export default indexApi
